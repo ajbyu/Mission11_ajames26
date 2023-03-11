@@ -1,0 +1,45 @@
+﻿@{}
+
+@model IEnumerable<string>
+
+<style>
+    .filter_item {
+        background-color: #e0e0de;
+        border-style: solid;
+        border-color: lightgray;
+        border-radius: 1px;
+        border-width: 2px;
+        padding: 5px;
+        margin: 5px;
+    }
+        @* This is the coolest CSS I've ever made. I should learn more some day. *@
+        .filter_item:hover {
+            background-color: #919191;
+            transition: all .4s ease;
+            transform: scale(1.01);
+        }
+
+    .selected_filter {
+        background-color: #0069d9;
+        border-radius: 1px;
+        padding: 5px;
+        margin: 5px;
+        color: white;
+    }
+</style>
+
+<div class="d-grid" style="text-align:center">
+    <b>Filter by Category</b>
+    <br />
+
+    <a class="btn btn-block filter_item" asp-action="Index" asp-route-bookCategory="" asp-route-pageNum="1">Clear</a>
+
+    @foreach (var category in Model)
+    {
+        <a asp-controller="Home"
+           asp-action="Index"
+           asp-route-pageNum="1"
+           asp-route-bookCategory="@category"
+           class="btn @(ViewBag.SelectedCategory == category ? "btn-block selected_filter" : "btn-block filter_item")">@category</a>
+    }
+</div>

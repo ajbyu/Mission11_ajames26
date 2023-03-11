@@ -1,0 +1,46 @@
+﻿@using Mission11_ajames26.Models.ViewModels;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BooksViewModel
+
+<style>
+    .container {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+
+    .background {
+        background-color: #e0e0de;
+        border-style: solid;
+        border-color: lightgray;
+        border-radius: 1px;
+        border-width: 2px;
+        padding: 5px;
+        margin: 5px;
+        width: 45%;
+    }
+
+    .background:hover {
+        background-color: #919191;
+        transition: all .4s ease;
+        transform: scale(1.01);
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Amazonian Books</h1>
+</div>
+
+<div class="container">
+    @foreach (Book b in Model.Books)
+    {
+        <partial name="BookDetails" model="b" />
+    }
+</div>
+
+@*Like my tag helper? There are many like it, but this one is mine.*@
+<div page-num="@Model.PageInfo" page-action="Index" use-classes="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
