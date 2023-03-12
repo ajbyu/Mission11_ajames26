@@ -20,6 +20,7 @@ namespace Mission11_ajames26.Models
 
         //This should remain virtual in case I need to extend things later without messing with this class.
         public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Purchase> Purchases { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

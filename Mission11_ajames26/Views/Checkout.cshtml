@@ -1,0 +1,44 @@
+﻿@{
+}
+
+@model Purchase
+
+<h2>Checkout</h2>
+<p>Please enter your details so we can send your books to the right place.</p>
+
+<form method="post">
+
+    <h4>Ship To</h4>
+    <div class="form-group">
+        <label asp-for="CustomerName">Name:</label>
+        <input asp-for="CustomerName" class="form-control" />
+    </div>
+
+    <h4>Address</h4>
+    <div class="form-group">
+        <label asp-for="AddressLine1"></label>
+        <input asp-for="AddressLine1" class="form-control" />
+
+        <label asp-for="AddressLine2"></label>
+        <input asp-for="AddressLine2" class="form-control" />
+
+        <label asp-for="AddressLine3"></label>
+        <input asp-for="AddressLine3" class="form-control" />
+
+        <label asp-for="City"></label>
+        <input asp-for="City" class="form-control" />
+
+        <label asp-for="State"></label>
+        <input asp-for="State" class="form-control" />
+
+        <label asp-for="PostalCode">Postal Code / ZIP</label>
+        <input asp-for="PostalCode" class="form-control" />
+
+        <label asp-for="Country"></label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+
+    <div class="float-end">
+        <input class="btn btn-success" type="submit" value="Checkout" />
+    </div>
+</form>

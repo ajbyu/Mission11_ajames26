@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Mission11_ajames26.Models
@@ -44,6 +45,7 @@ namespace Mission11_ajames26.Models
 
     public class CartItem
     {
+        [Key]
         public int LineId { get; set; }
         public Book Book { get; set; }
         public int Quantity { get; set; }
