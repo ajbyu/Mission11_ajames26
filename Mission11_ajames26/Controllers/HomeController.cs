@@ -13,7 +13,7 @@ namespace Mission11_ajames26.Controllers
         {
             _bookRepo = bookRepository;
         }
-
+        
         public IActionResult Index(string bookCategory, int pageNum = 1)
         {
             int pageSize = 10;

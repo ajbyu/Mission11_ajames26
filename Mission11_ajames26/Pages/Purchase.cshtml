@@ -55,11 +55,11 @@
                 Total:
             </td>
             <td>@Model.cart.CalculateTotal().ToString("c")</td>
-        </tr>
+        </tr>`
     </tfoot>
 </table>
 
 <div>
     <a class="btn btn-primary" href="@Model.ReturnUrl">Keep Shopping</a>
-    <a class="btn btn-success" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check Out</a>
+    <a class="btn btn-success" asp-controller="Purchase" asp-action="Checkout">Checkout</a>
 </div>
