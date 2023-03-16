@@ -38,6 +38,7 @@ namespace Mission11_ajames26
 
             //Concrete types for interfaces
             services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
 
             //Razor
             services.AddRazorPages();
@@ -74,6 +75,12 @@ namespace Mission11_ajames26
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "purchase",
+                    pattern: "purchase/checkout",
+                    defaults: new { controller = "Purchase", action = "Checkout" }
+                );
+
                 endpoints.MapControllerRoute(
                     name: "categoryPage",
                     pattern: "{bookCategory}/{pageNum}",
