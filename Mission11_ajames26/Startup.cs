@@ -47,6 +47,7 @@ namespace Mission11_ajames26
             services.AddDistributedMemoryCache();
             services.AddSession();
 
+            //This cart object is scoped to the entire program -- if calls the get cart method of the session cart, which either returns the cart stored in session storage or a new ones that gets stored.
             services.AddScoped<Cart>(c => SessionCart.GetCart(c));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
@@ -75,6 +76,7 @@ namespace Mission11_ajames26
 
             app.UseEndpoints(endpoints =>
             {
+                //This was initially parsed as {bookCategory: Purchase/pageNum: Checkout}. Thanks to Emily for finding a solution!
                 endpoints.MapControllerRoute(
                     name: "purchase",
                     pattern: "purchase/checkout",

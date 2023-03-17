@@ -26,6 +26,7 @@ namespace Mission11_ajames26.Controllers
         {
             if (_cart.CartItems.Count == 0)
             {
+                //Thanks for the quote, Marcus
                 ModelState.AddModelError("", "Buy something!");
             }
 
@@ -42,6 +43,7 @@ namespace Mission11_ajames26.Controllers
 
             else
             {
+                //Return to view and show errors if model is not valid
                 return View();
             }
         }
